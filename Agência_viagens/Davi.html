@@ -11,78 +11,100 @@
     <h1>ViageBem orcamentos</h1>
 
     <form action="" method="POST">
-        <label for="nome">Nome completo:</label>
-        <input type="text" name="nome" id="nome" placeholder="ex: Davi Reis" required />
-        <br>
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" placeholder="ex: davireis@exemplo.com" required />
-        <br>
-        <label for="telefone">Telefone:</label>
-        <input type="tel" name="telefone" id="telefone" placeholder="ex: (99) 99999-9999" required />
-        <br>
-
-        <label for="destino">Destinos de viagem:</label>
-        <select id="destino" name="destino" required>
-            <option value="">Selecione destino desejado</option>
-            <option value="Fr">França</option>
-            <option value="Ita">Itália</option>
-            <option value="UK">Reino Unido</option>
-            <option value="Jap">Japão</option>
-        </select>
+        
+        <!-- Bloco: Dados Pessoais -->
+        <div class="campo-dados-pessoais">
+            <label for="nome">Nome completo:</label>
+            <input type="text" name="nome" id="nome" placeholder="ex: Davi Reis" autocomplete="name" required />
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="ex: davireis@exemplo.com" autocomplete="email" required />
+            <br>
+            <label for="telefone">Telefone:</label>
+            <input type="tel" name="telefone" id="telefone" placeholder="ex: (99) 99999-9999" autocomplete="tel" required />
+        </div>
 
         <br>
 
-        <h3>Escolha seu plano:</h3>
-        <input type="radio" id="plano-econômico" name="plano" value="econômico" />
-        <label for="plano-econômico">Plano Econômico</label>
+        <!-- Bloco: Destino -->
+        <div class="campo-destino">
+            <label for="destino">Destinos de viagem:</label>
+            <select id="destino" name="destino" required>
+                <option value="">Selecione destino desejado</option>
+                <option value="Fr">França</option>
+                <option value="Ita">Itália</option>
+                <option value="UK">Reino Unido</option>
+                <option value="Jap">Japão</option>
+            </select>
+        </div>
 
         <br>
 
-        <input type="radio" id="plano-comforto" name="plano" value="comforto" />
-        <label for="plano-comforto">Plano Comforto</label>
+        <!-- Bloco: Escolha seu plano -->
+        <div class="campo-plano">
+            <fieldset>
+                <legend>Escolha seu plano:</legend>
+
+                <input type="radio" id="plano-economico" name="plano" value="economico" />
+                <label for="plano-economico">Plano Econômico</label>
+                <br>
+
+                <input type="radio" id="plano-comforto" name="plano" value="comforto" />
+                <label for="plano-comforto">Plano Comforto</label>
+                <br>
+
+                <input type="radio" id="plano-premium" name="plano" value="premium" />
+                <label for="plano-premium">Plano Premium</label>
+            </fieldset>
+        </div>
 
         <br>
 
-        <input type="radio" id="plano-premium" name="plano" value="premium" />
-        <label for="plano-premium">Plano Premium</label>
+        <!-- Bloco: Preferências -->
+        <div class="campo-preferencias">
+            <fieldset>
+                <legend>Preferências:</legend>
+
+                <input type="checkbox" id="tours" name="tours_guiados" />
+                <label for="tours">Quero tours guiados</label>
+                <br>
+
+                <input type="checkbox" id="seguro" name="seguro_viagem" />
+                <label for="seguro">Quero seguro viagem</label>
+                <br>
+
+                <input type="checkbox" id="traslado" name="traslado" />
+                <label for="traslado">Quero traslado</label>
+            </fieldset>
+        </div>
 
         <br>
 
-        <h3>Preferências:</h3>
-        <input type="checkbox" id="tours" name="tours guiados" />
-        <label for="tours">Quero tours guiados</label>
+        <!-- Bloco: Datas -->
+        <div class="campo-datas">
+            <label for="data-ida">Data de ida:</label>
+            <input type="date" id="data-ida" name="data_ida" />
+            <br>
+
+            <label for="data-volta">Data de volta:</label>
+            <input type="date" id="data-volta" name="data_volta" />
+        </div>
 
         <br>
 
-        <input type="checkbox" id="seguro" name="seguro viagem" />
-        <label for="seguro">Quero seguro viagem</label>
+        <!-- Bloco: Observações -->
+        <div class="campo-observacoes">
+            <label for="mensagem">Observações: </label>
+            <br>
+            <textarea id="mensagem" name="observacoes" rows="5"></textarea>
+        </div>
 
         <br>
 
-        <input type="checkbox" id="traslado" name="traslado" />
-        <label for="traslado">Quero traslado</label>
-
-        <br>
-        <br>
-
-        <label for="Data de ida">Data de ida:</label>
-        <input type="date" name="Data de ida" />
-
-
-        <br>
-
-        <label for="Data de volta">Data de volta:</label>
-        <input type="date" name="Data de volta" />
-
-        <br>
-
-        <label for="mensagem">Observações: </label>
-        <textarea id="mensagem" name="observacoes" rows="5"></textarea>
-
-        <br>
-        <br>
-
-        <button type="submit">Enviar solicitação de orçamento</button>
+        <!-- Bloco: Envio -->
+        <div class="campo-botao">
+            <button type="submit">Enviar solicitação de orçamento</button>
+        </div>
 
     </form>
 
