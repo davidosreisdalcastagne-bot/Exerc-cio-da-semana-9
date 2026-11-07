@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
     <title>ViajeBem</title>
 </head>
 
 <body>
     <h1>ViageBem orcamentos</h1>
 
-    <form action="" method="POST">
+    <form id="formCadastro" action="" method="POST">
         
-        <!-- Bloco: Dados Pessoais -->
         <div class="campo-dados-pessoais">
             <label for="nome">Nome completo:</label>
             <input type="text" name="nome" id="nome" placeholder="ex: Davi Reis" autocomplete="name" required />
@@ -26,73 +26,68 @@
 
         <br>
 
-        <!-- Bloco: Destino -->
         <div class="campo-destino">
             <label for="destino">Destinos de viagem:</label>
             <select id="destino" name="destino" required>
                 <option value="">Selecione destino desejado</option>
-                <option value="Fr">França</option>
-                <option value="Ita">Itália</option>
-                <option value="UK">Reino Unido</option>
-                <option value="Jap">Japão</option>
+                <option value="França">França</option>
+                <option value="Itália">Itália</option>
+                <option value="Reino Unido">Reino Unido</option>
+                <option value="Japão">Japão</option>
             </select>
         </div>
 
         <br>
 
-        <!-- Bloco: Escolha seu plano -->
         <div class="campo-plano">
             <fieldset>
                 <legend>Escolha seu plano:</legend>
 
-                <input type="radio" id="plano-economico" name="plano" value="economico" />
+                <input type="radio" id="plano-economico" name="plano" value="Econômico" required />
                 <label for="plano-economico">Plano Econômico</label>
                 <br>
 
-                <input type="radio" id="plano-comforto" name="plano" value="comforto" />
-                <label for="plano-comforto">Plano Comforto</label>
+                <input type="radio" id="plano-comforto" name="plano" value="Conforto" />
+                <label for="plano-comforto">Plano Conforto</label>
                 <br>
 
-                <input type="radio" id="plano-premium" name="plano" value="premium" />
+                <input type="radio" id="plano-premium" name="plano" value="Premium" />
                 <label for="plano-premium">Plano Premium</label>
             </fieldset>
         </div>
 
         <br>
 
-        <!-- Bloco: Preferências -->
         <div class="campo-preferencias">
             <fieldset>
                 <legend>Preferências:</legend>
 
-                <input type="checkbox" id="tours" name="tours_guiados" />
+                <input type="checkbox" id="tours" name="preferencias" value="Tours guiados" />
                 <label for="tours">Quero tours guiados</label>
                 <br>
 
-                <input type="checkbox" id="seguro" name="seguro_viagem" />
+                <input type="checkbox" id="seguro" name="preferencias" value="Seguro viagem" />
                 <label for="seguro">Quero seguro viagem</label>
                 <br>
 
-                <input type="checkbox" id="traslado" name="traslado" />
+                <input type="checkbox" id="traslado" name="preferencias" value="Traslado" />
                 <label for="traslado">Quero traslado</label>
             </fieldset>
         </div>
 
         <br>
 
-        <!-- Bloco: Datas -->
         <div class="campo-datas">
             <label for="data-ida">Data de ida:</label>
-            <input type="date" id="data-ida" name="data_ida" />
+            <input type="date" id="data-ida" name="data_ida" required />
             <br>
 
             <label for="data-volta">Data de volta:</label>
-            <input type="date" id="data-volta" name="data_volta" />
+            <input type="date" id="data-volta" name="data_volta" required />
         </div>
 
         <br>
 
-        <!-- Bloco: Observações -->
         <div class="campo-observacoes">
             <label for="mensagem">Observações: </label>
             <br>
@@ -101,12 +96,15 @@
 
         <br>
 
-        <!-- Bloco: Envio -->
         <div class="campo-botao">
             <button type="submit">Enviar solicitação de orçamento</button>
         </div>
 
     </form>
+
+    <br>
+    <!-- Div onde vai aparecer o resumo do orcamento -->
+    <div id="resumo"></div>
 
 </body>
 
