@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <title>ViajeBem</title>
 </head>
@@ -11,8 +12,13 @@
 <body>
     <h1>ViageBem orcamentos</h1>
 
+    <!-- mensagem geral de erro ou sucesso da aplicacao -->
+    <div id="mensagem-status"></div>
+    <br>
+
     <form id="formCadastro" action="" method="POST">
         
+        <!-- dados pessoais -->
         <div class="campo-dados-pessoais">
             <label for="nome">Nome completo:</label>
             <input type="text" name="nome" id="nome" placeholder="ex: Davi Reis" autocomplete="name" required />
@@ -22,10 +28,12 @@
             <br>
             <label for="telefone">Telefone:</label>
             <input type="tel" name="telefone" id="telefone" placeholder="ex: (99) 99999-9999" autocomplete="tel" required />
+            <small id="erro-telefone" class="erro-campo"></small>
         </div>
 
         <br>
 
+        <!-- destino -->
         <div class="campo-destino">
             <label for="destino">Destinos de viagem:</label>
             <select id="destino" name="destino" required>
@@ -39,11 +47,12 @@
 
         <br>
 
+        <!-- escolha do plano -->
         <div class="campo-plano">
             <fieldset>
                 <legend>Escolha seu plano:</legend>
 
-                <input type="radio" id="plano-economico" name="plano" value="Econômico" required />
+                <input type="radio" id="plano-economico" name="plano" value="Econômico" />
                 <label for="plano-economico">Plano Econômico</label>
                 <br>
 
@@ -54,10 +63,12 @@
                 <input type="radio" id="plano-premium" name="plano" value="Premium" />
                 <label for="plano-premium">Plano Premium</label>
             </fieldset>
+            <small id="erro-pacote" class="erro-campo"></small>
         </div>
 
         <br>
 
+        <!-- preferencias extras -->
         <div class="campo-preferencias">
             <fieldset>
                 <legend>Preferências:</legend>
@@ -77,6 +88,7 @@
 
         <br>
 
+        <!-- datas da viagem -->
         <div class="campo-datas">
             <label for="data-ida">Data de ida:</label>
             <input type="date" id="data-ida" name="data_ida" required />
@@ -88,14 +100,18 @@
 
         <br>
 
+        <!-- observacoes -->
         <div class="campo-observacoes">
             <label for="mensagem">Observações: </label>
             <br>
             <textarea id="mensagem" name="observacoes" rows="5"></textarea>
+            <!-- bonus 1: contador de caracteres -->
+            <div id="contador-caracteres">0 / 200 caracteres</div>
         </div>
 
         <br>
 
+        <!-- botao de enviar -->s
         <div class="campo-botao">
             <button type="submit">Enviar solicitação de orçamento</button>
         </div>
@@ -103,7 +119,7 @@
     </form>
 
     <br>
-    <!-- Div onde vai aparecer o resumo do orcamento -->
+    <!-- div onde vai aparecer o resumo -->
     <div id="resumo"></div>
 
 </body>
