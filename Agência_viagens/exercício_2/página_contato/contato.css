@@ -1,0 +1,10 @@
+/* estilos das mensagens da pagina de contato */
+.mensagem-erro {
+    color: red;
+    font-weight: bold;
+}
+
+.mensagem-sucesso {
+    color: green;
+    font-weight: bold;
+}
