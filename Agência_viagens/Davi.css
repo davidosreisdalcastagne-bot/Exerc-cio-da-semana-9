@@ -1,0 +1,16 @@
+/* estilos das mensagens de aviso e erro */
+.mensagem-sucesso {
+    color: green;
+    font-weight: bold;
+}
+
+.mensagem-erro {
+    color: red;
+    font-weight: bold;
+}
+
+.erro-campo {
+    color: red;
+    font-size: 0.85em;
+    display: block;
+}
